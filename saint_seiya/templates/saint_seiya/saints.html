@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saint Seiya API Characters</title>
+</head>
+<body>
+    <h1>Saint Seiya Characters</h1>
+
+    {% if characters %}
+        {% for character in characters %}
+            <div style="margin-bottom: 20px;">
+                <h2>{{ character.name|capfirst }}</h2>
+                <img src="{{ character.image }}" width="200" alt="{{ character.name }}">
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No characters available. The API may be down.</p>
+    {% endif %}
+
+</body>
+</html>
